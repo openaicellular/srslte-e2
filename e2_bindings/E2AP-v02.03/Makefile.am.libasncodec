@@ -1,0 +1,377 @@
+ASN_MODULE_SRCS=	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2AP-PDU.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_InitiatingMessage.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_SuccessfulOutcome.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_UnsuccessfulOutcome.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionRequest.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionDetails.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICactions-ToBeSetup-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICaction-ToBeSetup-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionResponse.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICaction-Admitted-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICaction-Admitted-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICaction-NotAdmitted-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICaction-NotAdmitted-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionFailure.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionDeleteRequest.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionDeleteResponse.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionDeleteFailure.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionDeleteRequired.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscription-List-withCause.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscription-withCause-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICindication.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolRequest.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolAcknowledge.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolFailure.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ErrorIndication.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2setupRequest.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2setupResponse.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2setupFailure.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdate.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdate-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdate-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdateRemove-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdateRemove-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdateAcknowledge.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionSetupFailed-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionSetupFailed-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdateFailure.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeConfigurationUpdate.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigAddition-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigAddition-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigUpdate-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigUpdate-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigRemoval-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigRemoval-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeTNLassociationRemoval-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeTNLassociationRemoval-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeConfigurationUpdateAcknowledge.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigAdditionAck-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigAdditionAck-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigUpdateAck-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigUpdateAck-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigRemovalAck-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigRemovalAck-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeConfigurationUpdateFailure.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ResetRequest.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ResetResponse.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICserviceUpdate.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctions-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunction-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionsID-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionID-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICserviceUpdateAcknowledge.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionsIDcause-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionIDcause-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICserviceUpdateFailure.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICserviceQuery.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2RemovalRequest.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2RemovalResponse.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2RemovalFailure.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_AMFName.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_Cause.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseE2node.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseMisc.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseProtocol.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseRICrequest.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseRICservice.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseTransport.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CriticalityDiagnostics.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CriticalityDiagnostics-IE-List.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CriticalityDiagnostics-IE-Item.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfiguration.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigurationAck.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceType.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceE1.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceF1.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceNG.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceS1.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceX2.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceXn.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceW1.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ENB-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ENB-ID-Choice.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ENGNB-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalE2node-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalE2node-en-gNB-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalE2node-eNB-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalE2node-gNB-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalE2node-ng-eNB-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalENB-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalenGNB-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalgNB-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalngeNB-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalNG-RANNode-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalRIC-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GNB-CU-UP-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GNB-DU-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GNB-ID-Choice.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_MMEname.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_NGENB-DU-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_PLMN-Identity.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionDefinition.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionOID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionRevision.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICactionDefinition.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICactionID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICactionType.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcallProcessID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolAckRequest.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolHeader.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolMessage.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolOutcome.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICeventTriggerDefinition.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICindicationHeader.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICindicationMessage.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICindicationSN.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICindicationType.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICrequestID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubsequentAction.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubsequentActionType.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICtimeToWait.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TimeToWait.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TNLinformation.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TNLusage.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TransactionID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TypeOfError.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_Criticality.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_Presence.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProcedureCode.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-ID.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TriggeringMessage.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-Container.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-SingleContainer.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-Field.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-ContainerPair.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-FieldPair.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-ContainerList.c	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-ContainerPairList.c
+
+ASN_MODULE_HDRS=	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2AP-PDU.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_InitiatingMessage.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_SuccessfulOutcome.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_UnsuccessfulOutcome.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionRequest.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionDetails.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICactions-ToBeSetup-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICaction-ToBeSetup-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionResponse.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICaction-Admitted-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICaction-Admitted-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICaction-NotAdmitted-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICaction-NotAdmitted-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionFailure.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionDeleteRequest.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionDeleteResponse.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionDeleteFailure.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscriptionDeleteRequired.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscription-List-withCause.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubscription-withCause-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICindication.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolRequest.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolAcknowledge.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolFailure.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ErrorIndication.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2setupRequest.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2setupResponse.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2setupFailure.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdate.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdate-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdate-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdateRemove-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdateRemove-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdateAcknowledge.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionSetupFailed-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionSetupFailed-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2connectionUpdateFailure.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeConfigurationUpdate.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigAddition-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigAddition-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigUpdate-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigUpdate-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigRemoval-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigRemoval-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeTNLassociationRemoval-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeTNLassociationRemoval-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeConfigurationUpdateAcknowledge.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigAdditionAck-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigAdditionAck-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigUpdateAck-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigUpdateAck-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigRemovalAck-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigRemovalAck-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeConfigurationUpdateFailure.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ResetRequest.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ResetResponse.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICserviceUpdate.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctions-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunction-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionsID-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionID-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICserviceUpdateAcknowledge.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionsIDcause-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionIDcause-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICserviceUpdateFailure.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICserviceQuery.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2RemovalRequest.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2RemovalResponse.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2RemovalFailure.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_AMFName.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_Cause.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseE2node.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseMisc.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseProtocol.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseRICrequest.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseRICservice.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CauseTransport.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CriticalityDiagnostics.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CriticalityDiagnostics-IE-List.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_CriticalityDiagnostics-IE-Item.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfiguration.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentConfigurationAck.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceType.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceE1.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceF1.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceNG.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceS1.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceX2.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceXn.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_E2nodeComponentInterfaceW1.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ENB-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ENB-ID-Choice.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ENGNB-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalE2node-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalE2node-en-gNB-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalE2node-eNB-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalE2node-gNB-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalE2node-ng-eNB-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalENB-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalenGNB-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalgNB-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalngeNB-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalNG-RANNode-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GlobalRIC-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GNB-CU-UP-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GNB-DU-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_GNB-ID-Choice.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_MMEname.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_NGENB-DU-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_PLMN-Identity.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionDefinition.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionOID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RANfunctionRevision.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICactionDefinition.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICactionID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICactionType.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcallProcessID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolAckRequest.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolHeader.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolMessage.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICcontrolOutcome.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICeventTriggerDefinition.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICindicationHeader.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICindicationMessage.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICindicationSN.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICindicationType.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICrequestID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubsequentAction.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICsubsequentActionType.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_RICtimeToWait.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TimeToWait.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TNLinformation.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TNLusage.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TransactionID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TypeOfError.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_Criticality.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_Presence.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProcedureCode.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-ID.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_TriggeringMessage.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-Container.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-SingleContainer.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-Field.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-ContainerPair.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-FieldPair.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-ContainerList.h	\
+	/nexran/build/lib/e2ap/E2AP/E2AP_ProtocolIE-ContainerPairList.h
+
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/ANY.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/ANY.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/OCTET_STRING.h
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/OPEN_TYPE.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/OPEN_TYPE.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/constr_CHOICE.h
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/INTEGER.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/INTEGER.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/NativeEnumerated.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/NativeEnumerated.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/NativeInteger.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/NativeInteger.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/PrintableString.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/PrintableString.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/asn_SEQUENCE_OF.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/asn_SEQUENCE_OF.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/asn_SET_OF.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/asn_SET_OF.c
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/constr_CHOICE.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/constr_SEQUENCE.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/constr_SEQUENCE.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/constr_SEQUENCE_OF.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/constr_SEQUENCE_OF.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/constr_SET_OF.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/constr_SET_OF.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/asn_application.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/asn_application.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/asn_ioc.h
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/asn_system.h
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/asn_codecs.h
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/asn_internal.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/asn_internal.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/asn_random_fill.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/asn_random_fill.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/asn_bit_data.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/asn_bit_data.c
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/OCTET_STRING.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/BIT_STRING.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/BIT_STRING.c
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/asn_codecs_prim.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/asn_codecs_prim.h
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/ber_tlv_length.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/ber_tlv_length.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/ber_tlv_tag.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/ber_tlv_tag.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/ber_decoder.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/ber_decoder.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/der_encoder.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/der_encoder.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/constr_TYPE.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/constr_TYPE.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/constraints.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/constraints.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/xer_support.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/xer_support.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/xer_decoder.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/xer_decoder.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/xer_encoder.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/xer_encoder.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/per_support.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/per_support.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/per_decoder.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/per_decoder.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/per_encoder.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/per_encoder.c
+ASN_MODULE_HDRS+=/nexran/build/lib/e2ap/E2AP/per_opentype.h
+ASN_MODULE_SRCS+=/nexran/build/lib/e2ap/E2AP/per_opentype.c
+
+ASN_MODULE_CFLAGS=-DASN_DISABLE_OER_SUPPORT 
+
+lib_LTLIBRARIES+=libasncodec.la
+libasncodec_la_SOURCES=$(ASN_MODULE_SRCS) $(ASN_MODULE_HDRS)
+libasncodec_la_CPPFLAGS=-I$(top_srcdir)//nexran/build/lib/e2ap/E2AP/
+libasncodec_la_CFLAGS=$(ASN_MODULE_CFLAGS)
+libasncodec_la_LDFLAGS=-lm
