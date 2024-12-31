@@ -61,7 +61,7 @@ class slicer {
     uint32_t alloc_index = 0;
 
     // for tracking all UE identifiers
-    static std::map<uint64_t, uint16_t> imsi_to_crnti;
+    std::map<uint64_t, uint16_t> imsi_to_crnti;
     std::map<uint32_t, uint64_t> tmsi_to_imsi;
 };
 
