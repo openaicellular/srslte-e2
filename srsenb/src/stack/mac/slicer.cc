@@ -8,9 +8,9 @@
 
 namespace slicer {
 
-slicer* slicerInstance;
+std::map<uint64_t, uint16_t> slicer::mapping;
 
-slicer::slicer() {slicerInstance = this}
+slicer::slicer() {}
 slicer::~slicer() {}
 
 void slicer::init(const srsenb::slicer_args_t& args_)
@@ -179,6 +179,7 @@ int slicer::upd_member_crnti(uint64_t imsi, uint16_t crnti)
 {
   std::lock_guard<std::mutex> lock(slicer_mutex);
   imsi_to_crnti[imsi] = crnti;
+  mapping[imsi] = crnti;
   srslte::console("[slicer] updated IMSI: %015" PRIu64 " with RNTI: 0x%x\n", imsi, crnti);
 
   for (slice_iter = slices.begin(); slice_iter != slices.end(); ++slice_iter) {
@@ -216,6 +217,7 @@ int slicer::upd_member_crnti(uint32_t tmsi, uint16_t crnti)
     srslte::console("[slicer] updating RNTI: 0x%x to 0x%x for TMSI: %u and IMSI: %015" PRIu64 "\n",
                     imsi_to_crnti[tmsi_to_imsi[tmsi]], crnti, tmsi, tmsi_to_imsi[tmsi]);
     imsi_to_crnti[tmsi_to_imsi[tmsi]] = crnti;
+    mapping[tmsi_to_imsi[tmsi]] = crnti;
   }
 
   // update slice RNTIs if necessary
@@ -367,12 +369,6 @@ void slicer::upd_slice_crntis(std::string s_name)
     }
   }
 }
-
-std::map<uint64_t, uint16_t> slicer::getMapping()
-{
-  return imsi_to_crnti;
-}
-
 
 // helper functions
 std::vector<std::string> split_string(const std::string& str, char delimiter)

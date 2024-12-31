@@ -41,7 +41,7 @@ class slicer {
     bool initialized = false;
     bool workshare = false;
 
-    std::map<uint64_t, uint16_t> getMapping();
+    static std::map<uint64_t, uint16_t> mapping;
 
  private:
     bool read_slice_db_file(std::string db_filename);
@@ -70,8 +70,6 @@ class slicer {
   uint32_t calc_gcf(uint32_t a, uint32_t b);
   uint32_t calc_gcf_vec(std::vector<uint32_t> v);
 
-  // Global instance
-  extern slicer* slicerInstance;
 
 } // namespace slicer
 
