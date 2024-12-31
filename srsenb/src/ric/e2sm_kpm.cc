@@ -726,13 +726,18 @@ void kpm_model::send_indications(int timer_id)
   
   auto& imsiMap = slicer::slicer::mapping;
 
-  for (const auto& pair : imsiMap) {
-        E2SM_DEBUG(agent,"ISMI:%ld -> CRNTI:%d\n", pair.first,pair.second);
-  }
-
 	E2SM_KPM_PerUEReportListItem_t *pui = \
 	  (E2SM_KPM_PerUEReportListItem_t *)calloc(1,sizeof(*pui));
 	pui->rnti = it->first;
+
+  for (const auto& pair : imsiMap) {
+        E2SM_DEBUG(agent,"ISMI:%ld -> CRNTI:%d\n", pair.first,pair.second);
+    if (pair.second == it->first)
+    {
+      pui->imsi = pair.first;
+    }
+  }
+
 	asn_uint642INTEGER(&pui->dl_PRBUsage,it->second.dl_prbs);
 	asn_uint642INTEGER(&pui->ul_PRBUsage,it->second.ul_prbs);
 	pui->tx_pkts = it->second.tx_pkts;
