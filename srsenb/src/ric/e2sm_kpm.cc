@@ -11,8 +11,6 @@
 #include "srsenb/hdr/ric/e2ap_decode.h"
 #include "srsenb/hdr/ric/e2ap_generate.h"
 
-#include "srsenb/hdr/stack/mac/slicer.h"
-
 #include "E2AP_Cause.h"
 #include "E2AP_RICactionType.h"
 #include "E2AP_RICindicationType.h"
@@ -39,6 +37,8 @@
 #ifdef ENABLE_SLICER
 #include "E2SM_KPM_PerSliceReportListItemFormat.h"
 #include "E2SM_KPM_PerSliceReportListItem.h"
+#include "srsenb/hdr/stack/mac/slicer.h"
+
 #endif
 
 namespace ric {
@@ -724,7 +724,7 @@ void kpm_model::send_indications(int timer_id)
       duc->perUEReportList = (E2SM_KPM_EPC_DU_PM_Container::E2SM_KPM_EPC_DU_PM_Container__perUEReportList *)calloc(1,sizeof(*duc->perUEReportList));
       for (auto it = dm->ues.begin(); it != dm->ues.end(); ++it) {
   
-  auto& imsiMap = slicer::slicer::getMapping();
+  auto& imsiMap = slicerInstance->getMapping();
 
   for (const auto& pair : imsiMap) {
         E2SM_DEBUG(agent,"ISMI:%d -> CRNTI:%d\n", pair.first,pair.second);

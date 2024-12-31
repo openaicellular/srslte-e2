@@ -70,6 +70,9 @@ class slicer {
   uint32_t calc_gcf(uint32_t a, uint32_t b);
   uint32_t calc_gcf_vec(std::vector<uint32_t> v);
 
+  // Global instance
+  extern slicer* slicerInstance;
+
 } // namespace slicer
 
 #endif // __SLICER_H_

@@ -8,7 +8,9 @@
 
 namespace slicer {
 
-slicer::slicer() {}
+slicer* slicerInstance;
+
+slicer::slicer() {slicerInstance = this}
 slicer::~slicer() {}
 
 void slicer::init(const srsenb::slicer_args_t& args_)
