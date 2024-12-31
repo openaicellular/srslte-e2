@@ -366,6 +366,12 @@ void slicer::upd_slice_crntis(std::string s_name)
   }
 }
 
+std::map<uint64_t, uint16_t> slicer::getMapping()
+{
+  return imsi_to_crnti;
+}
+
+
 // helper functions
 std::vector<std::string> split_string(const std::string& str, char delimiter)
 {
@@ -405,5 +411,7 @@ uint32_t calc_gcf_vec(std::vector<uint32_t> v)
   }
   return res;
 }
+
+
 
 } // namespace slicer

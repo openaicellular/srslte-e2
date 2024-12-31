@@ -40,6 +40,9 @@ class slicer {
     bool enable = false;
     bool initialized = false;
     bool workshare = false;
+
+    std::map<uint64_t, uint16_t> getMapping();
+
  private:
     bool read_slice_db_file(std::string db_filename);
     int add_slice(slice_t slice);
