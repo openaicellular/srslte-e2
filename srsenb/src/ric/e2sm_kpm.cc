@@ -734,8 +734,8 @@ void kpm_model::send_indications(int timer_id)
   for (const auto& pair : imsiMap) {
     if (pair.second == it->first)
     {
-      E2SM_DEBUG(agent,"ISMI: %ld -> CRNTI: %d\n PROC", pair.first,pair.second);
-      pui->imsi = pair.first;
+      E2SM_DEBUG(agent,"ISMI: %ld -> CRNTI: %d PROC\n", pair.first,pair.second);
+      asn_uint642INTEGER(&pui->imsi,pair.first);
     }
   }
 
