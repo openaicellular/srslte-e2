@@ -314,7 +314,7 @@ static const asn_TYPE_tag2member_t asn_MAP_E2SM_KPM_PerUEReportListItem_tag2el_1
     { (ASN_TAG_CLASS_CONTEXT | (16 << 2)), 16, 0, 0 }, /* ul-samples */
     { (ASN_TAG_CLASS_CONTEXT | (17 << 2)), 17, 0, 0 }, /* dl-mcs */
     { (ASN_TAG_CLASS_CONTEXT | (18 << 2)), 18, 0, 0 }, /* dl-samples */
-    { (ASN_TAG_CLASS_CONTEXT | (0 << 2)), 19, 0, 0 } /* imsi */
+    { (ASN_TAG_CLASS_CONTEXT | (19 << 2)), 19, 0, 0 } /* imsi */
 };
 asn_SEQUENCE_specifics_t asn_SPC_E2SM_KPM_PerUEReportListItem_specs_1 = {
 	sizeof(struct E2SM_KPM_PerUEReportListItem),
