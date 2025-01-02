@@ -281,7 +281,7 @@ asn_TYPE_member_t asn_MBR_E2SM_KPM_PerUEReportListItem_1[] = {
 		0, 0, /* No default value */
 		"dl-samples"
 		},
-	{ ATF_NOFLAGS, 0, offsetof(struct E2SM_KPM_PerUEReportListItem, dl_samples),
+	{ ATF_NOFLAGS, 0, offsetof(struct E2SM_KPM_PerUEReportListItem, imsi),
 		(ASN_TAG_CLASS_CONTEXT | (19 << 2)),
 		-1,	/* IMPLICIT tag at current level */
 		&asn_DEF_NativeInteger,
