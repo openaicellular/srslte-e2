@@ -46,6 +46,7 @@ typedef struct entity_metrics
   int64_t  ul_samples;
   float    dl_mcs;
   int64_t  dl_samples;
+  int64_t  imsi;
 } entity_metrics_t;
 
 class metrics;

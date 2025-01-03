@@ -217,6 +217,9 @@ void metrics::update(srsenb::enb_metrics_t *em)
    * ... except the RB counters are read every time from sched_ue objects,
    * and those counters are total.
    */
+
+  auto& imsiMap = slicer::slicer::mapping;
+
   for (uint16_t i = 0; i < ENB_METRICS_MAX_USERS; ++i) {
     uint16_t rnti = em->stack.mac[i].rnti;
     if (rnti == 0)
@@ -236,6 +239,13 @@ void metrics::update(srsenb::enb_metrics_t *em)
       DELTA(ues[rnti].ul_prbs,total_ues[rnti].ul_prbs,em->stack.mac[i].ul_rb,UINT64_MAX);
       total_ues[rnti].ul_prbs = em->stack.mac[i].ul_rb;
     }
+
+    for (const auto& pair : imsiMap) {
+    if (pair.second == it->first)
+    {
+      ues[rnti].imsi = pair.first;
+    }
+  }
 
     ues[rnti].tx_pkts = em->stack.mac[i].tx_pkts;
     ues[rnti].tx_errors = em->stack.mac[i].tx_errors;
