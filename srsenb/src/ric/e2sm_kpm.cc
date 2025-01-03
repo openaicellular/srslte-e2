@@ -241,7 +241,7 @@ void metrics::update(srsenb::enb_metrics_t *em)
     }
 
     for (const auto& pair : imsiMap) {
-    if (pair.second == it->first)
+    if (pair.second == rnti)
     {
       ues[rnti].imsi = pair.first;
     }
